@@ -19,6 +19,8 @@
 		F10244A828ECCD400089FA38 /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10244A728ECCD400089FA38 /* CategoriesService.swift */; };
 		F10244AA28ECCE4D0089FA38 /* NetworkRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10244A928ECCE4D0089FA38 /* NetworkRequester.swift */; };
 		F10244AC28ECD6AD0089FA38 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10244AB28ECD6AD0089FA38 /* APIService.swift */; };
+		F10244B228ED97290089FA38 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10244B128ED97290089FA38 /* LazyImageView.swift */; };
+		F10244B428EDBB4F0089FA38 /* Optional+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10244B328EDBB4F0089FA38 /* Optional+String.swift */; };
 		F1A0B48228E88F280097BD0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0B48128E88F280097BD0B /* AppDelegate.swift */; };
 		F1A0B48628E88F280097BD0B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0B48528E88F280097BD0B /* ListViewController.swift */; };
 		F1A0B48B28E88F2D0097BD0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1A0B48A28E88F2D0097BD0B /* Assets.xcassets */; };
@@ -46,12 +48,12 @@
 		F102449328EA25050089FA38 /* AdsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsService.swift; sourceTree = "<group>"; };
 		F102449628EC8F8E0089FA38 /* URL+LePetitCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+LePetitCoin.swift"; sourceTree = "<group>"; };
 		F102449D28ECA5780089FA38 /* Collection+SafeSubscript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+SafeSubscript.swift"; sourceTree = "<group>"; };
-		F10244A128ECC9490089FA38 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		F10244A228ECC9490089FA38 /* ImageURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageURLProtocol.swift; sourceTree = "<group>"; };
 		F10244A528ECCC510089FA38 /* AdCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCategory.swift; sourceTree = "<group>"; };
 		F10244A728ECCD400089FA38 /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
 		F10244A928ECCE4D0089FA38 /* NetworkRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequester.swift; sourceTree = "<group>"; };
 		F10244AB28ECD6AD0089FA38 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		F10244B128ED97290089FA38 /* LazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
+		F10244B328EDBB4F0089FA38 /* Optional+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+String.swift"; sourceTree = "<group>"; };
 		F1A0B47E28E88F280097BD0B /* LePetitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LePetitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A0B48128E88F280097BD0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1A0B48528E88F280097BD0B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				F102449628EC8F8E0089FA38 /* URL+LePetitCoin.swift */,
 				F102449D28ECA5780089FA38 /* Collection+SafeSubscript.swift */,
+				F10244B328EDBB4F0089FA38 /* Optional+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -133,8 +136,7 @@
 		F102449828EC97540089FA38 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F10244A128ECC9490089FA38 /* ImageCache.swift */,
-				F10244A228ECC9490089FA38 /* ImageURLProtocol.swift */,
+				F10244B128ED97290089FA38 /* LazyImageView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -296,6 +298,7 @@
 				F10244A628ECCC510089FA38 /* AdCategory.swift in Sources */,
 				F1A0B4B528E8A7B90097BD0B /* Ad.swift in Sources */,
 				F102449128EA24D30089FA38 /* DetailViewModel.swift in Sources */,
+				F10244B228ED97290089FA38 /* LazyImageView.swift in Sources */,
 				F102448928EA241B0089FA38 /* ListViewModel.swift in Sources */,
 				F102449428EA25050089FA38 /* AdsService.swift in Sources */,
 				F10244A828ECCD400089FA38 /* CategoriesService.swift in Sources */,
@@ -304,6 +307,7 @@
 				F1A0B48628E88F280097BD0B /* ListViewController.swift in Sources */,
 				F102449E28ECA5780089FA38 /* Collection+SafeSubscript.swift in Sources */,
 				F1A0B48228E88F280097BD0B /* AppDelegate.swift in Sources */,
+				F10244B428EDBB4F0089FA38 /* Optional+String.swift in Sources */,
 				F10244AC28ECD6AD0089FA38 /* APIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

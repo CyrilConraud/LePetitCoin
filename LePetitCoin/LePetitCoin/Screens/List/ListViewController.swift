@@ -73,7 +73,7 @@ extension ListViewController {
 
         tableView.backgroundColor = .white
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(AdCellView.self, forCellReuseIdentifier: viewModel.cellReuseIdentifier)
+        tableView.register(AdCellView.self, forCellReuseIdentifier: AdCellView.identifer)
         NSLayoutConstraint.activate([
             tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor),

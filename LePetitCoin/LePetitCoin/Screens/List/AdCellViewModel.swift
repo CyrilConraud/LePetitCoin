@@ -11,14 +11,20 @@ struct AdCellViewModel {
     var category: AdCategory? = nil
     let title: String
     let price: Double
-    let imageUrl: String
+    let imageUrl: URL?
     let isUrgent: Bool
 
     init(from ad: Ad, of matchedCategory: AdCategory?) {
         category = matchedCategory
         title = ad.title
         price = ad.price
-        imageUrl = ad.thumbnailImageUrl
+        imageUrl = URL(string: ad.thumbnailImageUrl)
         isUrgent = ad.isUrgent
+    }
+}
+
+extension AdCellViewModel {
+    func categoryName() -> String {
+        return category?.name ?? ""
     }
 }

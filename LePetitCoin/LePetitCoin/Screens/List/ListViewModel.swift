@@ -11,7 +11,6 @@ import os
 final class ListViewModel: NSObject {
 
     private let logger = Logger(subsystem: "com.cyrilconraud.LePetitCoin", category: "ListViewModel")
-    let cellReuseIdentifier = "AdCell"
 
     var categoriesFetched: () -> Void = {}
     var adsFetched: () -> Void = {}
@@ -72,7 +71,9 @@ extension ListViewModel {
 }
 
 extension ListViewModel: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120.0
+    }
 }
 
 extension ListViewModel: UITableViewDataSource {
@@ -84,7 +85,7 @@ extension ListViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let ads else { return UITableViewCell() }
 
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "AdCell", for: indexPath) as? AdCellView,
+        if let cell = tableView.dequeueReusableCell(withIdentifier: AdCellView.identifer, for: indexPath) as? AdCellView,
            let ad = ads[safe: indexPath.row] {
 
             cell.setupCell(viewModel: AdCellViewModel(from: ad, of: categoryFrom(ad)))
