@@ -21,10 +21,11 @@
 		F10244AC28ECD6AD0089FA38 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10244AB28ECD6AD0089FA38 /* APIService.swift */; };
 		F10244B228ED97290089FA38 /* LazyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10244B128ED97290089FA38 /* LazyImageView.swift */; };
 		F10244B428EDBB4F0089FA38 /* Optional+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10244B328EDBB4F0089FA38 /* Optional+String.swift */; };
+		F10244B628EE2CB50089FA38 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10244B528EE2CB50089FA38 /* Constants.swift */; };
 		F1A0B48228E88F280097BD0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0B48128E88F280097BD0B /* AppDelegate.swift */; };
 		F1A0B48628E88F280097BD0B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0B48528E88F280097BD0B /* ListViewController.swift */; };
 		F1A0B48B28E88F2D0097BD0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1A0B48A28E88F2D0097BD0B /* Assets.xcassets */; };
-		F1A0B49928E88F2D0097BD0B /* LePetitCoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0B49828E88F2D0097BD0B /* LePetitCoinTests.swift */; };
+		F1A0B49928E88F2D0097BD0B /* NetworkRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0B49828E88F2D0097BD0B /* NetworkRequesterTests.swift */; };
 		F1A0B4B328E89F1A0097BD0B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0B4B228E89F1A0097BD0B /* DetailViewController.swift */; };
 		F1A0B4B528E8A7B90097BD0B /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A0B4B428E8A7B90097BD0B /* Ad.swift */; };
 /* End PBXBuildFile section */
@@ -54,13 +55,14 @@
 		F10244AB28ECD6AD0089FA38 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		F10244B128ED97290089FA38 /* LazyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyImageView.swift; sourceTree = "<group>"; };
 		F10244B328EDBB4F0089FA38 /* Optional+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+String.swift"; sourceTree = "<group>"; };
+		F10244B528EE2CB50089FA38 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F1A0B47E28E88F280097BD0B /* LePetitCoin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LePetitCoin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1A0B48128E88F280097BD0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1A0B48528E88F280097BD0B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		F1A0B48A28E88F2D0097BD0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1A0B48F28E88F2D0097BD0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1A0B49428E88F2D0097BD0B /* LePetitCoinTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LePetitCoinTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1A0B49828E88F2D0097BD0B /* LePetitCoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LePetitCoinTests.swift; sourceTree = "<group>"; };
+		F1A0B49828E88F2D0097BD0B /* NetworkRequesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequesterTests.swift; sourceTree = "<group>"; };
 		F1A0B4B228E89F1A0097BD0B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F1A0B4B428E8A7B90097BD0B /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				F10244B128ED97290089FA38 /* LazyImageView.swift */,
+				F10244B528EE2CB50089FA38 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -178,7 +181,7 @@
 		F1A0B49728E88F2D0097BD0B /* LePetitCoinTests */ = {
 			isa = PBXGroup;
 			children = (
-				F1A0B49828E88F2D0097BD0B /* LePetitCoinTests.swift */,
+				F1A0B49828E88F2D0097BD0B /* NetworkRequesterTests.swift */,
 			);
 			path = LePetitCoinTests;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F102448D28EA24A80089FA38 /* AdCellView.swift in Sources */,
+				F10244B628EE2CB50089FA38 /* Constants.swift in Sources */,
 				F102448F28EA24B90089FA38 /* AdCellViewModel.swift in Sources */,
 				F102449728EC8F8E0089FA38 /* URL+LePetitCoin.swift in Sources */,
 				F102448428EA011A0089FA38 /* SceneDelegate.swift in Sources */,
@@ -316,7 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1A0B49928E88F2D0097BD0B /* LePetitCoinTests.swift in Sources */,
+				F1A0B49928E88F2D0097BD0B /* NetworkRequesterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

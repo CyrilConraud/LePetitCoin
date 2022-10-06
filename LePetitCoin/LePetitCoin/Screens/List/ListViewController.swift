@@ -8,8 +8,14 @@
 import UIKit
 
 class ListViewController: UIViewController {
-    let tableView = UITableView()
     private var viewModel = ListViewModel()
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .white
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.register(AdCellView.self, forCellReuseIdentifier: AdCellView.identifer)
+        return tableView
+    }()
 }
 
 // MARK: - Lifecycle
@@ -43,7 +49,6 @@ extension ListViewController {
 
 // MARK: - Setup
 extension ListViewController {
-
     func setupUI() {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Annonces"
@@ -66,14 +71,16 @@ extension ListViewController {
                 self.tableView.reloadData()
             }
         }
+        viewModel.adSelected = { [weak self] selectedAd, category in
+            guard let self else { return }
+            DispatchQueue.main.async {
+                self.moveToDetailScreen(with: selectedAd, of: category)
+            }
+        }
     }
 
     func setupTableView() {
         view.addSubview(tableView)
-
-        tableView.backgroundColor = .white
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(AdCellView.self, forCellReuseIdentifier: AdCellView.identifer)
         NSLayoutConstraint.activate([
             tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -88,9 +95,10 @@ extension ListViewController {
 
 // MARK: - Navigation
 extension ListViewController {
-    @objc func moveToDetailScreen() {
-        let detailScreen = DetailViewController()
-        detailScreen.title = "Une annonce"
+    func moveToDetailScreen(with ad: Ad, of category: AdCategory?) {
+        let viewModel = DetailViewModel(from: ad, of: category)
+        let detailScreen = DetailViewController(viewModel: viewModel)
+        detailScreen.title = viewModel.category?.name
         navigationController?.pushViewController(detailScreen, animated: true)
     }
 }

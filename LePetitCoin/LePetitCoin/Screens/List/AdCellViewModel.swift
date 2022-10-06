@@ -13,6 +13,7 @@ struct AdCellViewModel {
     let price: Double
     let imageUrl: URL?
     let isUrgent: Bool
+    let isProSeller: Bool
 
     init(from ad: Ad, of matchedCategory: AdCategory?) {
         category = matchedCategory
@@ -20,11 +21,6 @@ struct AdCellViewModel {
         price = ad.price
         imageUrl = URL(string: ad.thumbnailImageUrl)
         isUrgent = ad.isUrgent
-    }
-}
-
-extension AdCellViewModel {
-    func categoryName() -> String {
-        return category?.name ?? ""
+        isProSeller = ad.siret != nil && ad.siret != ""
     }
 }

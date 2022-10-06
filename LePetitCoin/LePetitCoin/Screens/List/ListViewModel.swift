@@ -12,8 +12,11 @@ final class ListViewModel: NSObject {
 
     private let logger = Logger(subsystem: "com.cyrilconraud.LePetitCoin", category: "ListViewModel")
 
+    private let cellHeight = 120.0
+
     var categoriesFetched: () -> Void = {}
     var adsFetched: () -> Void = {}
+    var adSelected: (Ad, AdCategory?) -> Void = { ad, category in }
 
     var categories: [AdCategory]? = nil
     let categoriesService = CategoriesService()
@@ -40,7 +43,7 @@ extension ListViewModel {
     }
 
     func adsFetched(_ remoteAds: [Ad]?) {
-        logger.log("\(remoteAds?.count ?? 0) categories fetched !")
+        logger.log("\(remoteAds?.count ?? 0) ads fetched !")
 
         ads = remoteAds
         adsFetched()
@@ -72,7 +75,14 @@ extension ListViewModel {
 
 extension ListViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0
+        return cellHeight
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let ads,
+           let selectedAd = ads[safe: indexPath.row] {
+            adSelected(selectedAd, categoryFrom(selectedAd))
+        }
     }
 }
 
